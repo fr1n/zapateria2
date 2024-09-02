@@ -1,0 +1,34 @@
+class Calzado:
+    def __init__(self, fecha, marca, material, tipo, talle, suela):
+        self.fecha = fecha
+        self.marca = marca
+        self.material = material
+        self.tipo = tipo
+        self.talle = talle
+        self.suela = suela
+
+    def mostrar_datos(self):
+        print("Fecha de compra:", self.fecha)
+        print("Marca:", self.marca)
+        print("Material:", self.material)
+        print("Tipo:", self.tipo)
+        print("Talle:", self.talle)
+        print("Suela:", self.suela)
+
+# Ejemplo de uso
+mi_zapatilla = Calzado("2023-11-25", "Nike", "Cuero", "Deportiva", 42, "Goma")
+mi_zapatilla.mostrar_datos()
+class Zapatilla(Calzado):
+    def __init__(self, fecha, marca, material, talle, suela, amortiguacion, tecnologia):
+        super().__init__(fecha, marca, material, "Deportiva", talle, suela)
+        self.amortiguacion = amortiguacion
+        self.tecnologia = tecnologia
+
+    def mostrar_datos(self):
+        super().mostrar_datos()
+        print("Amortiguación:", self.amortiguacion)
+        print("Tecnología:", self.tecnologia)
+
+# Ejemplo de uso
+mi_zapatilla_deportiva = Zapatilla("2023-11-25", "Nike", "Textil", 42, "Goma", "Alta", "Air")
+mi_zapatilla_deportiva.mostrar_datos()
